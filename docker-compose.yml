@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:3.2
+    volumes:
+      - db-data:/data/db
+    ports:
+      - 27017:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+volumes:
+  db-data:
+    driver: local
